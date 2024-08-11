@@ -7,11 +7,6 @@ import StyleGuide from "@/components/StyleGuide";
 import { Map } from "@/components/Map";
 import { Footer } from "@/components/Footer";
 
-import dynamic from 'next/dynamic';
-
-const DynamicComponent = dynamic(() => import('./DynamicComponent'), { 
-  ssr: false 
-});
 
 export default function Home() {
   return (
@@ -23,7 +18,6 @@ export default function Home() {
       <About />
       <Map />
       <Footer />
-      <DynamicComponent />
     </main>
   );
 }
