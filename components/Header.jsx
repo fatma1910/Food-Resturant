@@ -14,7 +14,10 @@ export const Header = () => {
     const handleScroll = () => {
       setActive(window.scrollY > 100);
     };
+
     window.addEventListener('scroll', handleScroll);
+    
+    // Cleanup event listener
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -22,12 +25,12 @@ export const Header = () => {
     <header
       className={`${
         active ? 'bg-black-hover/50 py-4' : 'bg-none py-8'
-      }  fixed top-0 max-w-full z-50 left-0 right-0 transition-all duration-200 `}
+      } fixed top-0 max-w-full z-50 left-0 right-0 transition-all duration-200`}
     >
       <div className='container mx-auto'>
         <div className='flex items-center justify-between'>
           <Link href='/'>
-            <Image src='/logo.svg' width={75} height={30} alt='' />
+            <Image src='/logo.svg' width={75} height={30} alt='Logo' />
           </Link>
           <Nav containerStyles='hidden xl:flex gap-x-12 text-white' linkStyles='capitalize' />
           <ScrollLink to='reservation' smooth={true}>
